@@ -10,7 +10,7 @@
 
 - **rvec (Rotation Vector):** 3D 공간에서 카메라가 바라보는 회전 각도 (Pitch, Yaw, Roll)
 - **tvec (Translation Vector):** 3D 공간에서 체스판 원점(0,0,0)을 기준으로 한 카메라의 물리적 거리 (X, Y, Z)
-  > **Analysis (분석):** `cv.solvePnP` 알고리즘을 통해 매 프레임마다 변하는 카메라의 동적 움직임을 수학적 벡터로 정밀하게 추출
+  > **Analysis (분석):** `cv.solvePnP` 알고리즘을 통해 매 프레임마다 변하는 카메라의 동적 움직임을 수학적 벡터로 정밀 추출
 
 ---
 
