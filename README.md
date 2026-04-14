@@ -1,6 +1,6 @@
 ## 1. Project Overview
 
-이 프로젝트는 사전 캘리브레이션된 카메라 파라미터를 활용하여 실시간으로 카메라의 위치와 방향을 추적하는 **Camera Pose Estimation(카메라 자세 추정)**과, 이를 바탕으로 3D 공간 상에 가상의 객체를 투영하는 **AR Object Visualization(증강현실 시각화)** 과정으로 구성됩니다. 특히 단순한 3D 도형이 아닌 **움직이는 2D 애니메이션(GIF)**을 3D 좌표계에 입체적으로 합성하는 기술적 과정을 분석합니다.
+이 프로젝트는 사전 캘리브레이션된 카메라 파라미터를 활용하여 실시간으로 카메라의 위치와 방향을 추적하는 **Camera Pose Estimation(카메라 자세 추정)** 과, 이를 바탕으로 3D 공간 상에 가상의 객체를 투영하는 **AR Object Visualization(증강현실 시각화)** 과정으로 구성됩니다. 특히, 단순한 3D 도형이 아닌 **움직이는 2D 애니메이션(GIF)** 을 3D 좌표계에 입체적으로 합성하는 기술적 과정을 분석합니다.
 
 ## 2. Camera Pose Estimation Results (카메라 자세 추정)
 
@@ -37,13 +37,13 @@
 
 #### 2) Perspective Transform (원근 변환 및 합성)
 
-- **Characteristic (특징):** 원본 직사각형의 GIF 애니메이션 프레임을 계산된 2D 투영 좌표(사다리꼴 형태)에 맞춰 왜곡시킴
+- **Characteristic (특징):** 원본 직사각형의 GIF 애니메이션 프레임을 계산된 2D 투영 좌표(사다리꼴 형태)에 맞춰 왜곡
 - **Analysis (분석):** `cv.findHomography`로 평면 변환 행렬을 도출하고 `cv.warpPerspective`를 적용. 카메라가 체스판을 비스듬히 바라볼 때 발생하는 **Perspective Distortion(원근 왜곡)** 을 애니메이션 프레임에 동일하게 부여하여, 물리 엔진을 적용한 듯한 이질감 없는 AR 합성 결과물 획득
 
 ---
 
 ## 5. How to Run (실행 방법)
 
-1. 이전 프로젝트에서 생성된 **`calibration_data.npz` 파일** 과 AR 소스인 **`bellsprout_monster.gif` 파일** 이 동일한 경로에 위치하는지 확인
+1. 이전 프로젝트에서 생성된 **`calibration_data.npz` 파일** 과 AR 소스인 **`bellsprout_monster.gif` ㄴ파일** 이 동일한 경로에 위치하는지 확인
 2. **`pokemon_ar.py`를 실행** 하여 실시간 웹캠 뷰어 활성화
 3. 카메라에 체스판을 비추어 실시간으로 자세가 추정되고 AR 전광판이 렌더링되는 영상 확인 (종료 시 `ESC` 입력)
